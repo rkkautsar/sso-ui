@@ -35,8 +35,7 @@ function SSO(options) {
     };
 
     this.logout = function(req, res, next) {
-        req.session.destroy();
-        next();
+        this.cas.logout(req, res, next);
     };
 
     this.login = this.login.bind(this);
