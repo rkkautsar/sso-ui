@@ -6,7 +6,7 @@ A middleware for express.js to authenticate user through SSO-UI.
 ## Usage
 Install through npm (you may have to add `sudo`):
 ```
-npm install --save rkkautsar/express-sso
+npm install --save express-sso
 ```
 
 Then require it in your app:
