@@ -1,6 +1,6 @@
 {
   "name": "express-sso",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "index.js",
   "description": "An express middleware module for CAS authentication with Single Sign On Universitas Indonesia (SSO-UI)",
   "author": "Rakha Kanz Kautsar <rkkautsar@gmail.com>",
