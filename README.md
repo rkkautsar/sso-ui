@@ -31,7 +31,14 @@ app.get('/login', sso.login, function(req, res) {
 
 ### Logout
 ```
-app.get('/logout', sso.logout);
+app.get('/logout-sso', sso.logout);
+```
+
+### Clear session
+```
+app.get('/logout', sso.clear, function(req, res) {
+	res.redirect('/');
+});
 ```
 
 ### Block if not authenticated
@@ -43,7 +50,7 @@ app.get('/route/to/critical/data', sso.block, function(req, res) {
 
 ### Get user after authenticated
 ```
-console.log(req.session.user); // null if not authenticated
+console.log(req.session.user); // undefined if not authenticated
 console.log(req.session.user.username);
 console.log(req.session.user.name);
 console.log(req.session.user.role);

@@ -34,9 +34,12 @@ function SSO(options) {
         this.cas.block(req, res, next);
     };
 
-    this.logout = function(req, res, next) {
-        this.cas.logout(req, res, next);
+    this.clear_session = function(req, res, next) {
+        req.session.destroy();
+        next();
     };
+
+    this.logout = this.cas.logout;
 
     this.login = this.login.bind(this);
     this.block = this.block.bind(this);
