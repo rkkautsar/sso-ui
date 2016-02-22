@@ -1,0 +1,25 @@
+{
+  "name": "express-sso",
+  "version": "0.0.1",
+  "main": "index.js",
+  "description": "An express middleware module for CAS authentication with Single Sign On Universitas Indonesia (SSO-UI)",
+  "author": "Rakha Kanz Kautsar <rkkautsar@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "cas",
+    "sso",
+    "auth",
+    "login",
+    "express",
+    "middleware",
+    "authentication",
+    "universitas indonesia"
+  ],
+  "dependencies": {
+    "cas-authentication": "^0.0.8"
+  },
+  "devDependencies": {
+    "express": "^4.13.4",
+    "express-session": "^1.13.0"
+  }
+}
