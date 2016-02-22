@@ -1,6 +1,8 @@
 express-sso
 ===========
 
+![npm badge](https://img.shields.io/npm/v/express-sso.svg)
+
 A middleware for express.js to authenticate user through SSO-UI.
 
 ## Usage
