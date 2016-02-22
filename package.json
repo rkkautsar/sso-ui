@@ -18,6 +18,14 @@
   "dependencies": {
     "cas-authentication": "^0.0.8"
   },
+  "homepage": "https://github.com/rkkautsar/express-sso",
+  "bugs" : {
+    "url": "https://github.com/rkkautsar/express-sso/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rkkautsar/express-sso"
+  },
   "devDependencies": {
     "express": "^4.13.4",
     "express-session": "^1.13.0"
