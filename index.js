@@ -34,7 +34,7 @@ function SSO(options) {
         this.cas.block(req, res, next);
     };
 
-    this.clear_session = function(req, res, next) {
+    this.clear = function(req, res, next) {
         req.session.destroy();
         next();
     };
