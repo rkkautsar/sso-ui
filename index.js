@@ -39,18 +39,8 @@ function SSO(options) {
         next();
     };
 
-    this.setUser = function(user) {
-        this.user = user;
-    };
-
-    this.getUser = function() {
-        return this.user;
-    };
-
     this.login = this.login.bind(this);
     this.block = this.block.bind(this);
-    this.getUser = this.getUser.bind(this);
-    this.setUser = this.setUser.bind(this);
 }
 
 module.exports = SSO;
