@@ -1,4 +1,5 @@
 sso-ui
+======
 ![npm badge](https://img.shields.io/npm/v/sso-ui.svg)
 
 A middleware for express.js to authenticate user through SSO-UI.
