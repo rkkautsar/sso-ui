@@ -1,19 +1,17 @@
-express-sso
-===========
-
-![npm badge](https://img.shields.io/npm/v/express-sso.svg)
+sso-ui
+![npm badge](https://img.shields.io/npm/v/sso-ui.svg)
 
 A middleware for express.js to authenticate user through SSO-UI.
 
 ## Usage
 Install through npm (you may have to add `sudo`):
 ```
-npm install --save express-sso
+npm install --save sso-ui
 ```
 
 Then require it in your app:
 ```
-var SSO = require('express-sso');
+var SSO = require('sso-ui');
 ```
 
 And make an object:
