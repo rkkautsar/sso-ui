@@ -26,8 +26,10 @@
     "type": "git",
     "url": "https://github.com/rkkautsar/sso-ui"
   },
-  "devDependencies": {
-    "express": "^4.13.4",
+  "dependencies" : {
     "express-session": "^1.13.0"
+  },
+  "devDependencies": {
+    "express": "^4.13.4"
   }
 }

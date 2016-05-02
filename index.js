@@ -2,26 +2,28 @@ var CAS            = require('cas-authentication');
 var orgCodeDetails = require('./org_code_details.json');
 
 function SSO(options) {
-	var session_sso = options.session_sso || 'user';	
+	var session_sso = options.session_sso || 'sso_user';	
 
     this.cas = new CAS({
         cas_url: "https://sso.ui.ac.id/cas2",
         service_url: options.url,
         cas_version: '2.0',
-        session_name: 'sso_user',
-        session_info: 'sso_info',
+        session_name: options.session_sso,
+        session_info: options.session_sso + '_info',
     });
 
     this.login = function(req, res, next) {
-        
-        inject_next = function() {
-            req.session[session_sso] = {
-                username: req.session.sso_user,
-                fullname: req.session.sso_info.nama,
-                role: req.session.sso_info.peran_user,
-                npm: req.session.sso_info.npm,
-                org_code: req.session.sso_info.kd_org,
-                org: orgCodeDetails[req.session.sso_info.kd_org]
+
+        var sso = this;
+
+        var inject_next = function() {
+           sso.user = {
+                username: req.session[options.session_sso],
+                fullname: req.session[options.session_sso + '_info'].nama,
+                role: req.session[options.session_sso + '_info'].peran_user,
+                npm: req.session[options.session_sso + '_info'].npm,
+                org_code: req.session[options.session_sso + '_info'].kd_org,
+                org: orgCodeDetails[req.session[options.session_sso + '_info'].kd_org]
             };
 
             next();
