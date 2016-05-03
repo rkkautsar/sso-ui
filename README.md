@@ -34,10 +34,14 @@ app.use(session({
 app.use(sso.middleware);
 ```
 
-### Login
+### Login (or Bounce)
 ```js
 app.get('/login', sso.login, function(req, res) {
     res.redirect('/');
+});
+
+app.get('/user', sso.login, function(req, res) {
+    res.json(req.sso_user);
 });
 ```
 
