@@ -1,6 +1,6 @@
 {
   "name": "sso-ui",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "main": "index.js",
   "description": "An express middleware module for CAS authentication with Single Sign On Universitas Indonesia (SSO-UI)",
   "author": "Rakha Kanz Kautsar <rkkautsar@gmail.com>",
@@ -16,18 +16,15 @@
     "universitas indonesia"
   ],
   "dependencies": {
-    "cas-authentication": "^0.0.8"
+    "express-session": "^1.13.0"
   },
   "homepage": "https://github.com/rkkautsar/sso-ui",
-  "bugs" : {
+  "bugs": {
     "url": "https://github.com/rkkautsar/sso-ui/issues"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/rkkautsar/sso-ui"
-  },
-  "dependencies" : {
-    "express-session": "^1.13.0"
   },
   "devDependencies": {
     "express": "^4.13.4"
