@@ -17,6 +17,9 @@ var SSO = require('sso-ui');
 
 Make an object and middlewares:
 ```js
+var app = require('express')();
+var session = require('express-session');
+
 var sso = new SSO({
 	url: 'http://localhost:3000', //required
 	session_sso: 'sso_user' // defaults to sso_user
@@ -27,6 +30,7 @@ app.use(session({
     resave: false,
     saveUninitialized: true
 }));
+
 app.use(sso.middleware);
 ```
 
@@ -61,7 +65,7 @@ app.get('/route/to/critical/data', sso.block, function(req, res) {
 var user = req.sso_user; // or whatever your session_sso is set to
 if (user) {
     console.log(user);
-    // equals to
+    // should be equals to
     console.log({
         username: user.username,
         name: user.name,
