@@ -70,16 +70,23 @@ var user = req.sso_user; // or whatever your session_sso is set to
 if (user) {
     console.log(user);
     // should be equals to
+    // if role is mahasiswa:
     console.log({
         username: user.username,
         name: user.name,
         role: user.role,
         npm: user.npm,
         org_code: user.org_code,
-        org: {
-            study_program: user.org.study_program,
-            educational_program: user.org.educational_program
-        }
+        faculty: user.faculty,
+        study_program: user.study_program,
+        educational_program: user.educational_program
+    });
+    // if role is staff:
+    console.log({
+        username: user.username,
+        name: user.name,
+        role: user.role,
+        nip: user.npm
     });
 }
 ```

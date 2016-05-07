@@ -14,14 +14,26 @@ function SSO(options) {
 
     this.middleware = function(req, res, next) {
         if (req.session[session_sso]) {
-            req[session_sso] = {
-                username: req.session[session_sso],
-                fullname: req.session[session_sso + '_info'].nama,
-                role: req.session[session_sso + '_info'].peran_user,
-                npm: req.session[session_sso + '_info'].npm,
-                org_code: req.session[session_sso + '_info'].kd_org,
-                org: orgCodeDetails[req.session[session_sso + '_info'].kd_org]
-            };
+            var info = req.session[session_sso + '_info'];
+            var user = {};
+
+            user.username = req.session[session_sso];
+            user.name = info.nama;
+            user.role = info.peran_user;
+
+            if (user.role === "mahasiswa") {
+                user.npm = info.npm;
+                user.org_code = info.kd_org;
+                
+                data = orgCodeDetails[user.org_code];
+                user.faculty = data.faculty;
+                user.study_program = data.study_program;
+                user.educational_program = data.educational_program;
+            } else if (user.role === "staff") {
+                user.nip = info.nip;
+            }
+
+            req[session_sso] = user;
         } else {
             req[session_sso] = null;
         }
@@ -30,8 +42,8 @@ function SSO(options) {
     }
 
     this.clear = function(req, res, next) {
-       req.session.destroy();
-       this.user = null;
+       req.session[session_sso] = null;
+       req.session[session_sso + '_info'] = null;
        next();
     };
 
