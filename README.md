@@ -86,7 +86,7 @@ if (user) {
         username: user.username,
         name: user.name,
         role: user.role,
-        nip: user.npm
+        nip: user.nip
     });
 }
 ```
