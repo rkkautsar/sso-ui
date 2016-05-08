@@ -12,6 +12,14 @@ function SSO(options) {
         session_info: session_sso + '_info',
     });
 
+
+    /**
+     * Middleware that maps raw sso info into meaningful user data
+     * @param  {Object}   req  Express request object
+     * @param  {Object}   res  Express response object
+     * @param  {Function} next Express next callback
+     * @return {Function}      Express middleware to parse the data
+     */
     this.middleware = function(req, res, next) {
         if (req.session[session_sso]) {
             var info = req.session[session_sso + '_info'];
@@ -41,6 +49,14 @@ function SSO(options) {
         next();
     }
 
+    /**
+     * Clears sso from session, can be use as a simple log out
+     * but not single sign-out
+     * @param  {Object}   req  Express request object
+     * @param  {Object}   res  Express response object
+     * @param  {Function} next Express next callback
+     * @return {Function}      Express middleware to clear sso sessions
+     */
     this.clear = function(req, res, next) {
        req.session[session_sso] = null;
        req.session[session_sso + '_info'] = null;
