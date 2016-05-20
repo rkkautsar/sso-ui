@@ -16,7 +16,7 @@
     "universitas indonesia"
   ],
   "dependencies": {
-    "cas-authentication": "github:andimeier/cas-authentication",
+    "cas-authentication": "github:rkkautsar/cas-authentication",
     "express-session": "^1.13.0"
   },
   "homepage": "https://github.com/rkkautsar/sso-ui",
