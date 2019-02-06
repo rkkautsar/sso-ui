@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "description": "An express middleware module for CAS authentication with Single Sign On Universitas Indonesia (SSO-UI)",
-  "author": "Rakha Kanz Kautsar <rkkautsar@gmail.com>",
+  "author": "Rakha Kanz Kautsar",
   "license": "MIT",
   "keywords": [
     "cas",
